@@ -1,30 +1,22 @@
-<div id='test'>
+<form id='upload-form' 
+hx-encoding='multipart/form-data' 
+enctype="multipart/form-data"  
+method="post" 
+hx-boost="true"
+hx-push-url="true" 
 
-<form id='upload-form' hx-encoding='multipart/form-data'  enctype="multipart/form-data" method="post"
-
+action="{% url 'upload' %}"
 hx-on::after-request="if(event.detail.successful) { this.reset(); document.querySelector('#progress').value = 0; }"> 
    
     {% csrf_token %}
         {{ form.as_p }}
-    <button hx-post="{% url 'upload' %}" hx-boost="true"  hx-push-url="true">
-        Upload
-    </button>
+        <button  type="submit" >
+            Upload
+        </button>
     <progress id='progress' value='0' max='100'></progress>
 </form>
-<div id="image-result">
-    
-</div>
-
-
-
-
-
 <script>
     htmx.on('#upload-form', 'htmx:xhr:progress', function(evt) {
       htmx.find('#progress').setAttribute('value', evt.detail.loaded/evt.detail.total * 100)
     });
 </script>
-
-
-
-</div>
