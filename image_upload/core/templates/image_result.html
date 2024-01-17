@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form id='upload-form' 
+hx-encoding='multipart/form-data' 
+enctype="multipart/form-data"  
+method="post" 
+hx-boost="true"
+hx-push-url="true" 
+action="{% url 'upload' %}"
+hx-on::after-request="if(event.detail.successful) { this.reset(); document.querySelector('#progress').value = 0; }"> 
+   
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button  type="submit" >
+            Upload
+        </button>
+    <progress id='progress' value='0' max='100'></progress>
+</form>
+<div id="image-result">
+    
+    
+
+
+test image result
+<img  src='{{ image.image.url }}'>
+</div>
+
+{% endblock %}
+
