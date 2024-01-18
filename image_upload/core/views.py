@@ -30,7 +30,7 @@ def show_image(request, image_id):
         image = Uploaded_Image.objects.get(id=image_id)
     except Uploaded_Image.DoesNotExist:
         return HttpResponse("Image not found", status=404)
-    
+    image_exif_data = {}
     if image.exif_data:
         image_exif_data = json.loads(image.exif_data)
 

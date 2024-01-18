@@ -1,4 +1,4 @@
-
+{% load static %}
 <!-- base.html -->
 
 <!DOCTYPE html>
@@ -10,11 +10,12 @@
     <script src="https://unpkg.com/htmx.org@1.9.10" 
     integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" 
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/core.css' %}">
 </head>
 <body>
 
     <header>
-        <h1>{% block header %}My Django Site{% endblock %}</h1>
+        <h1>{% block header %}Image Exif Viewer{% endblock %}</h1>
         <!-- Add your header content here -->
     </header>
 
@@ -24,7 +25,7 @@
 
     <footer>
         <!-- Add your footer content here -->
-        <p>&copy; 2024 My Django Site</p>
+        <p>&copy; Robert Melen</p>
     </footer>
     <script>
         document.body.addEventListener('htmx:configRequest', (event) => {
