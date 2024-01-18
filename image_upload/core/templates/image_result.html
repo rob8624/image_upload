@@ -8,8 +8,16 @@
 test image result
 <img src='{{ image.image.url }}'>
 </div>
-
-
+{% if image_exif_data %}
+    <h3>EXIF Data:</h3>
+    <ul>
+        {% for key, value in image_exif_data.items %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No EXIF data available for this image.</p>
+{% endif %}
 <a hx-boost="true" href="{% url 'upload' %}">Back</a>
 {% endblock %}
 
