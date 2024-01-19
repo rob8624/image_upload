@@ -56,28 +56,40 @@ body {
     font-weight: bold;
   }
 
+  #data-wrapper {
+    max-width: 100%;
+   
+
+  }
+
+  #data-wrapper .exif-title {
+    color: red;
+    font-size: x-large;
+}
+
   img {
 
     max-width: 1000px;
   }
 
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     #results-wrapper {
       display: flex;
       flex-direction: column;
     }
 
     img {
-       max-width: 450px; 
+       max-width: 100%; 
     }
 }
 
   footer {
       position: absolute;
-      bottom:0;
+      top:0;
       width: 100vw;
       text-align: center;
+      color: white;
       
     }
 

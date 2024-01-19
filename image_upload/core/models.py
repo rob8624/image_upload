@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 # Create your models here.
 class Uploaded_Image(models.Model):
@@ -8,4 +9,8 @@ class Uploaded_Image(models.Model):
     def __str__(self):
         return f"{self.image.name} - {self.id}" 
     
+    @property
+    def filename(self):
+        return os.path.basename(self.image.name)
+
 
