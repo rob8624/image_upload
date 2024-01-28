@@ -52,3 +52,6 @@ def extract_exif_data(image_path):
     except Exception as e:
         print(f"Error extracting EXIF data from {image_path}: {e}")
         return {}
+    
+
+

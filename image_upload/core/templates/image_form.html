@@ -4,7 +4,7 @@
         enctype="multipart/form-data"  
         method="post" 
         hx-boost="true"
-        hx-push-url="true" 
+        
 
         action="{% url 'upload' %}"
         hx-on::after-request="if(event.detail.successful) { this.reset(); document.querySelector('#progress').value = 0; }"> 
