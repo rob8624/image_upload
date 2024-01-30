@@ -28,6 +28,9 @@
                     <span>{{ value }}</span>
                     <span>|</span>
                 {% endfor %}
+               
+                <button hx-post="{% url 'test_view' image.pk %}" hx-target="#edit" >EDIT</button>
+                <div id="edit"></div>
                 </div>
            
         {% else %}

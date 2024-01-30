@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    "django_htmx",
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    "django_htmx.middleware.HtmxMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -123,3 +125,19 @@ MEDIA_URL = 'images/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ADMINS = (
+
+('foo', 'foo@bar.co.uk'),
+
+)
+
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+
+EMAIL_HOST_USER = 'foobar@yahoo.co.uk'
+
+EMAIL_HOST_PASSWORD = 'password'
+
+EMAIL_PORT = 4566
+
+EMAIL_USE_TLS = True
