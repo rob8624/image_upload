@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Django Site{% endblock %}</title>
     <script src="https://unpkg.com/htmx.org@1.9.10" 
+    
     integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" 
     crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/core.css' %}">
 </head>
 <body>
@@ -31,6 +33,11 @@
         document.body.addEventListener('htmx:configRequest', (event) => {
         event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
         })
+    </script>
+    <script>
+        document.body.addEventListener("dataRefresh", function(evt){
+    alert("tf it's friday");
+})
     </script>
 </body>
 </html>

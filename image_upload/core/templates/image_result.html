@@ -21,7 +21,7 @@
         {% if image_exif_data %}
             <span class="exif-title">EXIF Data: for</span>
             <span class="image-filename">{{ image.filename }}</span>
-            
+                <div id="new-data"></div>
                 <div id="data">
                 {% for key, value in image_exif_data.items %}
                     <span class="data-type">{{ key }}:</span>
@@ -29,7 +29,9 @@
                     <span>|</span>
                 {% endfor %}
                
-                <button hx-post="{% url 'test_view' image.pk %}" hx-target="#edit" >EDIT</button>
+               
+               
+                <button hx-post="{% url 'test_view' image.pk %}" hx-target="#edit">EDIT</button>
                 <div id="edit"></div>
                 </div>
            

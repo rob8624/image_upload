@@ -1,8 +1,17 @@
 
 
-<form  >
+<form 
+id="edit-data" type="submit" 
+value="Submit" name="edit-form" 
+form="edit-data" 
+method="post"
+hx-post="{% url 'test_view' image.pk %}"
+hx-target="#new-data" >
     {% csrf_token %}
     {{ form.as_p}}
-    <input content_type='application/json' id="edit-data" type="submit" value="Submit" name="edit-data" form="edit-data" hx-post="{% url 'test_view' image.pk %}" hx-target="#result" hx-include="#edit-data"/>
+    <button type="submit">sadasdd</button>
+    
 </form>
+
 <div id="result"></div>
+
