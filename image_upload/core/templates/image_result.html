@@ -19,7 +19,12 @@
     </div>
     <div id="data-wrapper">
         {% if image_exif_data %}
-            <span class="exif-title">EXIF Data: for</span>
+            <span class="exif-title">
+             
+                {{ selection }} 
+                
+                Data: for
+            </span>
             <span class="image-filename">{{ image.filename }}</span>
                 <div id="new-data"></div>
                 <div id="data">

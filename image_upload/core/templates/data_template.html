@@ -1,5 +1,6 @@
 <h1>Your data has been edited and saved</h1>
-The artist is {{ artist }}
+Here is you image with edited EXIF 
+<img style="width: 30%" src={{ new_image.image.url }}/>
 {% for key, value in form.items %}
 <h3>{{ key }}</h3>{{ value }}
 {% endfor %}
