@@ -4,6 +4,8 @@ body {
     height: 100vh;
     position: relative;
     
+    
+    
    
   }
 
@@ -26,6 +28,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
+    
   }
 
   #title-wrapper {
@@ -58,6 +61,9 @@ body {
 
   #data-wrapper {
     max-width: 100%;
+    height: 70vh;
+    overflow:scroll;
+    
    
 
   }
@@ -67,10 +73,19 @@ body {
     font-size: x-large;
 }
 
+
   img {
 
     max-width: 1000px;
   }
+
+   #modified-results-wrapper { 
+
+    display: flex;
+    flex-direction: column;
+
+
+   }
 
 
   @media screen and (max-width: 1200px) {

@@ -4,12 +4,17 @@
 id="edit-data" type="submit" 
 value="Submit" name="edit-form" 
 form="edit-data" 
-method="post"
+method="POST"
 hx-post="{% url 'test_view' image.pk %}"
-hx-target="#new-data" >
+hx-target="#results-wrapper" >
     {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">sadasdd</button>
+    {% for field in form %}
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+   
+    <br>
+{% endfor %}
+    <button type="submit">Submit</button>
     
 </form>
 

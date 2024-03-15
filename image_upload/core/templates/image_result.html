@@ -17,18 +17,25 @@
             
             <img src='{{ image.image.url }}'>
     </div>
+   
     <div id="data-wrapper">
         {% if image_exif_data %}
             <span class="exif-title">
-             
-                {{ selection }} 
+            
                 
+                {% if selection == None %}
+                Empty
+                {% else %}
+                {{ selection }}
+                {% endif %}
                 Data: for
             </span>
             <span class="image-filename">{{ image.filename }}</span>
                 <div id="new-data"></div>
                 <div id="data">
+                    
                 {% for key, value in image_exif_data.items %}
+                     
                     <span class="data-type">{{ key }}:</span>
                     <span>{{ value }}</span>
                     <span>|</span>
@@ -37,8 +44,9 @@
                
                
                 <button hx-post="{% url 'test_view' image.pk %}" hx-target="#edit">EDIT</button>
-                <div id="edit"></div>
+                
                 </div>
+                <div class="form" id="edit"></div>
            
         {% else %}
             <p>No EXIF data available for this image.</p>
